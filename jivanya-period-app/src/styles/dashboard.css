@@ -1,0 +1,588 @@
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+}
+
+/* Sidebar */
+.sidebar-dashboard {
+  width: 240px;
+  background-color: #ef1eb4;
+  padding: 24px;
+  border-right: 2px solid #ab9a9c;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 768px) {
+  .sidebar-dashboard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-right: none;
+    border-top: 2px solid #ab9a9c;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+  }
+}
+
+.sidebar-dashboard h2 {
+  font-size: 1.5rem;
+  color: #040404;
+  margin-bottom: 24px;
+}
+
+.sidebar-dashboard nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .sidebar-dashboard nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+/* Buttons */
+.sidebar-dashboard nav button {
+  background-color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 1rem;
+  color: #0b0b0b;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center; /* Center text below icon */
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align text and icon vertically */
+}
+
+.sidebar-dashboard nav button:hover {
+  background-color: #ffb7f7;
+  color: #d63384;
+}
+
+.sidebar-dashboard nav button .fa {
+  font-size: 8rem; /* Increase Font Awesome icon size */
+
+}
+
+.sidebar-dashboard nav button .label {
+  margin-top: 8px; /* Space between icon and text */
+  font-size: 0.9rem; /* Smaller font size for text */
+  color: #000;
+}
+
+.sidebar-dashboard nav button:hover .icon {
+  color: #d63384;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 32px;
+  background-color: #fff;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* Hero Section */
+.herodashboard {
+  background-color: #ef1eb4;
+  padding: 32px 24px;
+  min-height: 160px;
+  margin-bottom: 28px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.2);
+}
+
+@media (max-width: 768px) {
+  .herodashboard {
+    padding: 20px 16px;
+  }
+}
+
+/* Flex layout for heading and image */
+.header-with-image {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #000000;
+  text-align: left;
+}
+
+.header-text p {
+  margin: 0;
+  color: #000000;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.header-right-image {
+  width: 180px;
+  height: auto;
+  object-fit: fill;
+}
+
+@media (max-width: 768px) {
+  .header-with-image {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-right-image {
+    align-self: flex-end;
+    margin-top: 10px;
+    width: 100px;
+  }
+}
+
+/* Section Layout */
+.sectiondashboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+  .sectiondashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Keeps space between child elements */
+ justify-content: center;/* Removes any margin at the bottom of the container */
+}
+
+  .sidebar-dashboard nav button {
+    font-size: 0.875rem; /* smaller text */
+    padding: 8px 16px;    /* More horizontal padding */
+    width: 100px;         /* Automatic width based on content */
+    height: 50px;        /* Fixed height for consistency */
+  } }
+/* Calendar Box */
+.calendar-box {
+  flex: 1;
+  background-color: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+  min-width: 300px;
+}
+
+.calendar-box h2 {
+  margin-bottom: 16px;
+  color: #c2185b;
+}
+
+/* Input Section */
+.inputs-box {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(255, 105, 180, 0.1);
+  min-width: 300px;
+}
+
+.inputs-box h2 {
+  margin-bottom: 16px;
+  color: #c2185b;
+}
+
+.inputs-box label {
+  display: block;
+  margin-bottom: 6px;
+  color: #070707;
+  font-weight: 500;
+}
+
+.inputs-box input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  background-color: #ffd6e8;
+  border: 1px solid #ffb6c1;
+  border-radius: 6px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.inputs-box input:focus {
+  border-color: #ff69b4;
+}
+
+/* Number Control Box */
+.number-control-box {
+  display: flex;
+  align-items: center;
+  background-color: #ffd6e8;
+  border-radius: 12px;
+  padding: 6px 16px;
+  gap: 10px;
+  width: fit-content;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(255, 105, 180, 0.1);
+}
+
+.number-control-box button {
+  background-color: transparent;
+  border: none;
+  color: #a52a6c;
+  font-size: 1.4rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.number-control-box button:hover {
+  background-color: #ff91af;
+}
+
+.number-display {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #c2185b;
+  min-width: 30px;
+  text-align: center;
+}
+
+/* Calendar Section */
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.day-label {
+  font-weight: bold;
+  text-align: center;
+  color: #a52a6c;
+}
+
+.calendar-day {
+  padding: 8px;
+  background: #fff0f6;
+  border-radius: 8px;
+  text-align: center;
+  min-height: 30px;
+}
+
+.calendar-day.highlight {
+  background-color: #f78fb3;
+  color: white;
+  font-weight: bold;
+}
+
+/* Month Header */
+.month-header button {
+  background-color: #ffd6e8;
+  color: #a52a6c;
+  border: none;
+  padding: 6px 12px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0 8px;
+  transition: background-color 0.3s ease;
+}
+
+.month-header button:hover {
+  background-color: #fcb3d1;
+}
+.set-cycle-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #ff6b81;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.set-cycle-btn:hover {
+  background-color: #ff4757;
+}
+
+.days-left-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: #ffeaea;
+  border: 1px solid #ffc1c1;
+  border-radius: 10px;
+  text-align: center;
+}
+.calendar-day.highlight {
+  background-color: #ff8aa1;
+  color: white;
+  border-radius: 50%;
+}
+
+.calendar-day.ovulation {
+  border: 2px solid #40c4ff;
+  border-radius: 50%;
+}
+
+.legend {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.legend-box {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+
+.legend-box.period {
+  background-color: #ff8aa1;
+}
+
+.legend-box.ovulation {
+  border: 2px solid #40c4ff;
+}
+.symptom-logger-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}
+
+.symptom-logger-box label,
+.symptom-logger-box select {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.symptom-info {
+  margin-top: 1rem;
+  background-color: #fff3cd;
+  padding: 1rem;
+  border-left: 5px solid #ffc107;
+  border-radius: 8px;
+}
+@media (max-width: 480px) {
+  .herodashboard {
+    padding: 16px 12px;
+    min-height: auto;
+  }
+
+  .header-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .header-text p {
+    font-size: 0.85rem;
+  }
+
+  .header-right-image {
+    width: 80px;
+    margin-top: 12px;
+  }
+
+  .sectiondashboard {
+    gap: 16px;
+  }
+
+  .calendar-box,
+  .inputs-box {
+    padding: 16px;
+    min-width: 100%;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-day {
+    font-size: 0.8rem;
+    padding: 6px;
+    min-height: 24px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .number-control-box {
+    width: 100%;
+    justify-content: space-between;
+    padding: 8px;
+  }
+
+  .sidebar-dashboard nav button {
+    font-size: 0.75rem;
+    justify-content: space-between;
+    padding: 6px 8px;
+  }
+
+  .set-cycle-btn {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  .days-left-box,
+  .symptom-logger-box {
+    padding: 0.75rem;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .legend-box {
+    width: 12px;
+    height: 12px;
+  }
+
+  .symptom-logger-box label,
+  .symptom-logger-box select {
+    font-size: 0.85rem;
+  }
+
+  .symptom-info {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+}
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+}
+
+
+.profile-dialog {
+  position: fixed;
+  inset: 0; /* Top, right, bottom, left = 0 */
+  margin: auto; /* Centers it horizontally and vertically */
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 260px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  background-color: #fff;
+  animation: fadeInScale 0.25s ease-out;
+}
+
+
+.dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.profile-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dialog-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.upload-btn,
+.default-btn {
+  font-size: 12px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.upload-btn:hover,
+.default-btn:hover {
+  background-color: #0056b3;
+}
+
+.dialog-content button:last-child {
+  background-color: #ccc;
+  color: #333;
+}
+
+.dialog-content button:last-child:hover {
+  background-color: #999;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px auto;
+}
+
+@media (max-width: 600px) {
+  .profile-pic {
+    width: 50px;
+    height: 50px;
+  }
+}

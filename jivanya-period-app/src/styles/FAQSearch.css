@@ -1,0 +1,118 @@
+.faq-container {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 2rem auto;
+    background-color: #fce4ec; /* Light pink background */
+    border-radius: 16px;
+    border: 1px solid #f8c4d9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .faq-title {
+    text-align: center;
+    font-size: 24px;
+    color: #c2185b;
+    margin-bottom: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .faq-search-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .faq-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #f48fb1;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s ease;
+  }
+  
+  .faq-input:focus {
+    outline: none;
+    border-color: #ec407a;
+    box-shadow: 0 0 4px #f8bbd0;
+  }
+  
+  .faq-item {
+    background-color: white;
+    border: 1px solid #f8bbd0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .faq-item:hover {
+    transform: scale(1.03);
+  }
+  
+  .faq-question {
+    color: #ad1457;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .faq-answer {
+    margin-top: 4px;
+    color: #444;
+    font-size: 14px;
+    display: none;
+  }
+  
+  .faq-answer.show {
+    display: block;
+  }
+  
+  .faq-no-results {
+    text-align: center;
+    color: #c2185b;
+    font-style: italic;
+  }
+  
+  .faq-link {
+    color: #ec407a;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .faq-link:hover {
+    text-decoration: underline;
+  }
+  
+  .faq-search-bar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .faq-input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #f48fb1;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .faq-button {
+    padding: 8px 12px;
+    background-color: #ec407a;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .faq-button:hover {
+    background-color: #d81b60;
+  }
+  

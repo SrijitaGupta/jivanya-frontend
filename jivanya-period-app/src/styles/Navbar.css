@@ -1,0 +1,161 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    color: #333;
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d63384;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #fd92cf;
+}
+
+/* Login & Signup Buttons */
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-button, .signup-button {
+    background-color: #d63384;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.login-button:hover, .signup-button:hover {
+    background-color: #c2185b;
+}
+
+/* Mobile Menu Button */
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fd92cf;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 100;
+    padding: 20px;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Sidebar Login & Signup */
+.sidebar-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links, .auth-buttons {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .sidebar {
+        right: -250px;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+}
+.brand-name {
+    font-family: 'Playfair Display', serif; /* Use your chosen font */
+    font-size: 24px;
+    font-weight: bold;
+    color: #d63384; /* Stylish color */
+    margin-left: 10px;
+}

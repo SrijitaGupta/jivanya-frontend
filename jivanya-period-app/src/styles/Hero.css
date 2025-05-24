@@ -1,0 +1,100 @@
+.hero {
+    position: relative;
+    background-image: url('../assets/ovary image1.jpg');
+    background-size: 60%;  /* Reduces the image size to 50% of its original size */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Optional: keeps the background fixed while scrolling */
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(0);
+}
+
+
+
+.hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(231, 208, 208, 0.5); /* Dark overlay for text visibility */
+    z-index: 1;
+}
+
+.hero .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #f70063;
+    padding: 0 20px; /* Added padding for small screen sizes */
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.content p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #f70063;
+    margin-top: 10px;
+}
+
+.cta-button {
+    text-decoration: none;
+    color: white;
+    background-color: #f70063; /* Dark pink color */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #e60056; /* Slightly darker pink for hover effect */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hero {
+        background-size: contain; /* Ensures the background image is contained */
+        background-attachment: scroll; /* Disable fixed background on smaller screens */
+    }
+
+    .content h1 {
+        font-size: 2.5rem; /* Reduce font size for smaller screens */
+    }
+
+    .content p {
+        font-size: 1.2rem; /* Reduce font size for smaller screens */
+    }
+
+    .cta-button {
+        padding: 8px 16px; /* Smaller padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero {
+        height: 80vh; /* Reduce the height on very small screens */
+    }
+
+    .content h1 {
+        font-size: 2rem; /* Further reduce font size on very small screens */
+    }
+
+    .content p {
+        font-size: 1rem; /* Further reduce font size for very small screens */
+    }
+
+    .cta-button {
+        padding: 6px 12px; /* Even smaller padding for very small screens */
+    }
+}

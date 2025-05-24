@@ -1,0 +1,193 @@
+/* Container for the form and image */
+.menses-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: hsl(324, 73%, 91%); /* Light pink background */
+    height: 100vh; /* Ensure the container takes up the full viewport height */
+  }
+  
+  /* Left side containing the image */
+  .menses-left {
+    width: 40%;
+    justify-content: center;
+    display: flex; /* Flexbox to center the image */
+    align-items: center; /* Center the image vertically */
+    height: 100%; /* Ensure it takes the full height */
+  }
+  
+  .menses-image {
+    width: 100%;
+    height: auto;
+    max-height: 100%; /* Ensure the image doesn't overflow */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    border-radius: 10px; /* Optional: adds rounded corners */
+  }
+  
+  /* Right side containing the form */
+  .menses-right {
+    width: 56%;
+    background-color: #fda8c4; /* Light pink background for the form */
+    padding: 20px;
+    border-radius: 10px; /* Optional: adds rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align the content to the top */
+    height: 100%; /* Make it take up the full height */
+    overflow-y: auto; /* Make the form scrollable when content exceeds height */
+  }
+  
+  /* Header for the chat section */
+  .form-container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .chat-title {
+    font-size: 2rem;
+    color: white;
+    background-color: #ea1db7; /* Dark pink background */
+    padding: 10px 20px;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;               /* Full width of form container */
+    box-sizing: border-box;    /* Include padding in width */
+  }
+  
+  
+  /* Styling for each question bubble */
+  .chat-bubble {
+    margin-bottom: 15px;
+    background-color: #f8d0d0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  /* Chat form styling */
+  .chat-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Styling for input fields */
+  input[type="text"], select {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ff80ab;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  select {
+    background-color: #ffecf1;
+  }
+  
+  /* Submit button */
+  .chat-submit {
+    align-self: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #d5006d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .chat-submit:disabled {
+    background-color: #ff80ab;
+  }
+  
+  /* Error message styling */
+  .chat-error {
+    color: #ff3366;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Results styling */
+  .chat-results {
+    margin-top: 30px;
+  }
+  
+  .chat-bubble.result {
+    background-color: #ffccf9;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+  
+  .chat-form label {
+    color: black;
+    text-align: center; /* Center the question text */
+    margin: 0; /* Ensure no margin around the label */
+    display: block; /* Make the label a block element so it takes the full width */
+    margin-bottom: 5px; /* Add some space between the question and input */
+  }
+  
+  /* Style the list items (questions) */
+  .chat-form ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .chat-form li {
+    margin-bottom: 20px; /* Add space between each question */
+    display: flex;
+    flex-direction: column; /* Stack the label and input */
+    align-items: flex-start; /* Ensure the label is aligned to the left */
+    position: relative; /* Allow absolute positioning of the bullet */
+    padding-left: 30px; /* Give room for the bullet to the left */
+  }
+  
+  /* Bullet before the question */
+  .chat-form li::before {
+    content: ""; /* Remove default list bullet */
+    background-image: url('../assets/custom-bullet.jpg'); /* Set the path to your flower image */
+    background-size: cover; /* Ensure the image fits the bullet size */
+    width: 20px; /* Adjust the size of the bullet */
+    height: 20px; /* Adjust the size of the bullet */
+    position: absolute; /* Position the bullet outside the text */
+    left: 0; /* Place the bullet on the far left */
+    top: 50%; /* Vertically center the bullet */
+    transform: translateY(-50%); /* Ensure exact centering */
+  }
+  
+  /* Ensure text color of questions is black */
+  .chat-form label {
+    color: black;
+    flex-grow: 1; /* Ensure the label text takes available space */
+  }
+  
+  /* Adjust the input field layout to prevent shifting */
+  .chat-form input,
+  .chat-form select {
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%; /* Ensures input fields stretch */
+    box-sizing: border-box;
+  }
+  @media (max-width: 768px) {
+    .menses-container {
+      flex-direction: column; /* Stack image and form vertically */
+      height: auto; /* Allow height to expand based on content */
+    }
+  
+    .menses-left,
+    .menses-right {
+      width: 100%; /* Full width on small screens */
+      height: auto; /* Let each section take natural height */
+    }
+  
+    .menses-left {
+      margin-bottom: 20px; /* Add space between image and form */
+    }
+  
+    .menses-image {
+      max-height: 300px; /* Prevent oversized image on small screens */
+    }
+  }
+  

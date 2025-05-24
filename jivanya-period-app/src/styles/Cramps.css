@@ -1,0 +1,336 @@
+.cramps-page {
+    background-color: #ffeef4;
+    
+    font-family: "Segoe UI", sans-serif;
+    padding: 1rem 2rem;
+  }
+  
+  .cramps-header {
+    background-color: #e83e8c;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+  }
+  
+  .cramps-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cramps-buttons button {
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin: 0.3rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  
+  .cramps-buttons button:hover {
+    background-color: #d43d75;
+  }
+  
+  .cramps-section {
+    margin: 3rem 0;
+    background-color: #fff0f6;
+    padding: 2rem;
+    border-radius: 10px;
+    color: #333;
+  }
+  
+  .cramps-section h2 {
+    color: #e83e8c;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cramps-section p, .cramps-section ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .image-row {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .image-row img {
+    width: 120px;
+    height: auto;
+  }
+  
+  .cramps-section.overview {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cramps-section.overview .overview-image {
+    flex: 0 0 30%;
+  }
+  
+  .cramps-section.overview .overview-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .cramps-section.overview .overview-text {
+    flex: 1;
+    line-height: 1.6;
+    text-align: left;
+  }
+  
+  /* Text alignment for other sections */
+  #symptoms h2,
+  #symptoms p,
+  #symptoms ul {
+    text-align: left;
+  }
+  
+ 
+  .cramps-section#risk h2,
+.cramps-section#risk p,
+.cramps-section#risk ul {
+  text-align: left;
+}
+
+#treatment .treatment-content {
+    display: flex;
+    align-items: flex-start; /* align top */
+    gap: 2rem; /* space between text and image */
+  }
+  
+  #treatment .treatment-text {
+    flex: 1; /* text takes available space */
+  }
+  
+  #treatment .Treatment-image {
+    max-width: 400px; /* fixed width for image */
+    flex-shrink: 0; /* prevent shrinking */
+  }
+  
+  #treatment .Treatment-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+  #treatment .treatment-text,h2 {
+    flex: 1; /* keep the width */
+    text-align: left; /* force left alignment */
+  }
+  .Causes-image {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .Causes-image img {
+    width: 60%;  /* Adjust width as needed (e.g. 40% to 70%) */
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .causes-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .causes-text {
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+  }
+  
+  .Causes-image {
+    flex: 0 0 35%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .Causes-image img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .symptoms-top-row {
+    display: flex;
+    align-items: flex-start;
+    max-width: 700px;
+    width: 100%;  /* full container width */
+    margin-bottom: 40px;
+    gap: 20px;
+    justify-content: flex-start; /* align children to start */
+  }
+  
+  .symptoms-text {
+    flex: 1 1 auto;
+    padding-right: 20px;
+    max-width: calc(100% - 240px); /* leave space for right image */
+  }
+  
+  .symptoms-image-right {
+    width: 250px;
+    height: auto;
+    flex-shrink: 0;
+    margin-left: auto;  /* push image all the way right */
+  }
+  
+  .symptoms-image-bottom {
+    display: block;
+    margin: 0 auto;
+    width: 120px;  /* smaller */
+    height: auto;
+    margin-top: 40px;
+  }
+ /* ========================
+   Responsive Styles
+   ======================== */
+@media (max-width: 1024px) {
+    .cramps-header h1 {
+      font-size: 2rem;
+    }
+  
+    .cramps-buttons button {
+      padding: 0.4rem 0.8rem;
+      font-size: 0.9rem;
+    }
+  
+    .cramps-section {
+      padding: 1.5rem;
+    }
+  
+    .cramps-section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .image-row {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Layout: Stack elements vertically */
+    .cramps-section.overview,
+    .causes-content,
+    #treatment .treatment-content,
+    .symptoms-top-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .cramps-section.overview .overview-image,
+    .causes-text,
+    .Causes-image,
+    #treatment .treatment-text,
+    #treatment .Treatment-image,
+    .symptoms-text,
+    .symptoms-image-right {
+      max-width: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .cramps-section.overview .overview-text,
+    .causes-text,
+    #treatment .treatment-text,
+    .symptoms-text {
+      text-align: center;
+    }
+  
+    .symptoms-image-right,
+    .Causes-image {
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  
+    .symptoms-image-right img,
+    .Causes-image img,
+    #treatment .Treatment-image img {
+      max-width: 80%;
+      height: auto;
+    }
+  
+    .cramps-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .cramps-buttons button {
+      margin: 0.5rem;
+    }
+  
+    .cramps-header {
+      padding: 1.5rem;
+      text-align: center;
+    }
+  
+    .cramps-header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .image-row {
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  
+    .image-row img {
+      width: 100px;
+    }
+  
+    .symptoms-image-bottom {
+      width: 100px;
+      margin-top: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cramps-header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .cramps-section {
+      padding: 1rem;
+    }
+  
+    .cramps-section h2 {
+      font-size: 1.3rem;
+    }
+  
+    .cramps-buttons button {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.7rem;
+    }
+  
+    .symptoms-image-right img,
+    .Causes-image img,
+    #treatment .Treatment-image img {
+      max-width: 100%;
+    }
+  
+    .symptoms-image-bottom {
+      width: 80px;
+    }
+  
+    .image-row img {
+      width: 80px;
+    }
+  }
+  

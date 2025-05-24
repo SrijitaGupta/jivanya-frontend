@@ -1,0 +1,189 @@
+/* Container for the form and image */
+.endometriosis-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: hsl(324, 73%, 91%);
+  height: 100vh;
+}
+
+/* Left side containing the image */
+.endometriosis-left {
+  width: 40%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.endometriosis-image {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Right side containing the form */
+.endometriosis-right {
+  width: 56%;
+  background-color: #fda8c4;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Header for the chat section */
+.form-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.chat-title {
+  font-size: 2rem;
+  color: white;
+  background-color: #ea1db7;
+  padding: 10px 20px;
+  border-radius: 0px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styling for each question bubble */
+.chat-bubble {
+  margin-bottom: 15px;
+  background-color: #f8d0d0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Chat form styling */
+.chat-form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for input fields */
+input[type="text"], select {
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #ff80ab;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+select {
+  background-color: #ffecf1;
+}
+
+/* Submit button */
+.chat-submit {
+  align-self: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #d5006d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-submit:disabled {
+  background-color: #ff80ab;
+}
+
+/* Error message styling */
+.chat-error {
+  color: #ff3366;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Results styling */
+.chat-results {
+  margin-top: 30px;
+}
+
+.chat-bubble.result {
+  background-color: #ffccf9;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Question labels */
+.chat-form label {
+  color: black;
+  text-align: center;
+  margin: 0;
+  display: block;
+  margin-bottom: 5px;
+  flex-grow: 1;
+}
+
+/* List styling */
+.chat-form ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.chat-form li {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  padding-left: 30px;
+}
+
+/* Custom bullet */
+.chat-form li::before {
+  content: "";
+  background-image: url('../assets/custom-bullet.jpg');
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Input full width */
+.chat-form input,
+.chat-form select {
+  margin-top: 5px;
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .endometriosis-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .endometriosis-left,
+  .endometriosis-right {
+    width: 100%;
+    height: auto;
+  }
+
+  .endometriosis-left {
+    margin-bottom: 20px;
+  }
+
+  .endometriosis-image {
+    max-height: 300px;
+  }
+}

@@ -1,0 +1,128 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ 
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif; /* Stylish font */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d63384;
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #fd92cf;
+}
+
+/* Mobile Menu Button */
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #fd92cf;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 100;
+    padding: 20px;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    padding: 10px 0;
+}
+
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .sidebar {
+        right: -250px;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+}

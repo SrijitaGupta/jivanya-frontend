@@ -1,0 +1,285 @@
+.hormones-page {
+  background-color: #ffeef4;
+  font-family: "Segoe UI", sans-serif;
+  padding: 1rem 2rem;
+}
+
+.hormones-header {
+  background-color: #e83e8c;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.hormones-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hormones-buttons button {
+  background-color: #ff66a3;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.hormones-buttons button:hover {
+  background-color: #d43d75;
+}
+
+.hormones-section {
+  margin: 3rem 0;
+  background-color: #fff0f6;
+  padding: 2rem;
+  border-radius: 10px;
+  color: #333;
+}
+
+.hormones-section h2 {
+  color: #e83e8c;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.hormones-section p,
+.hormones-section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* Overview section */
+.hormones-section.overview {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hormones-section.overview .overview-image {
+  flex: 10% 0 40%;
+}
+
+.hormones-section.overview .overview-image img {
+  width: 60%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.hormones-section.overview .overview-text {
+  flex: 1;
+  text-align: left;
+  line-height: 0.75;
+}
+
+/* Symptoms section */
+.symptoms-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.symptoms-container img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.symptoms-container ul {
+  flex: 1;
+}
+
+/* Causes section */
+.causes-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.causes-container img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.causes-container ul {
+  flex: 1;
+}
+
+/* Treatment section */
+.treatment-container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.treatment-container img {
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.treatment-container ul {
+  flex: 1;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .hormones-header h1 {
+    font-size: 2rem;
+  }
+
+  .hormones-buttons button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .hormones-section {
+    padding: 1.5rem;
+  }
+
+  .hormones-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hormones-section.overview,
+  .symptoms-container,
+  .causes-container,
+  .treatment-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .overview-text,
+  .symptoms-container ul,
+  .causes-container ul,
+  .treatment-container ul {
+    text-align: center;
+  }
+
+  .hormones-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hormones-buttons button {
+    margin: 0.5rem;
+  }
+
+  .hormones-header {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .hormones-header h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hormones-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .hormones-section {
+    padding: 1rem;
+  }
+
+  .hormones-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .hormones-buttons button {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .symptoms-container img,
+  .causes-container img,
+  .treatment-container img {
+    max-width: 100%;
+  }
+}
+.hormones-section {
+  text-align: left;
+}
+/* Causes section: flex layout with text on left, image on right */
+#causes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+#causes p,
+#causes h2,
+#causes h3,
+#causes ul {
+  flex: 1 1 60%;
+  min-width: 280px;
+}
+
+.causes-image {
+  flex: 1 1 35%;
+  min-width: 250px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.causes-image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+}
+/* Food Cravings section layout */
+.Foodcravings-image {
+  float: left;
+  margin-right: 20px;
+  max-width: 300px;
+}
+
+.Foodcravings-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.Bloating-image {
+  flex: 1 1 35%;
+  min-width: 250px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Bloating-image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+}
+.Mgdrop-image {
+  flex: 1 1 35%;
+  min-width: 250px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Mgdrop-image img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+}

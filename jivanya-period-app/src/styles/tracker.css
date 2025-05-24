@@ -1,0 +1,49 @@
+.tracker-container-main {
+    padding: 2rem;
+    background-color: #fff0f6;
+    min-height: 100vh;
+    color: #d63384;
+  }
+  
+  .tracker-title-main {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tracker-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .tracker-card {
+    background-color: #ffc0cb;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .tracker-card.clickable {
+    cursor: pointer;
+  }
+  
+  .tracker-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tracker-card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .tracker-card-sub {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  
