@@ -18,13 +18,14 @@
     gap: 2rem;
   }
   
-  .team-card {
-    background-color: #ffe4ec; /* soft blush pink */
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 6px 20px rgba(236, 64, 122, 0.1); /* soft pink shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+ .team-card {
+  background-color: #ffe4ec; /* soft blush pink */
+  padding: 2rem;
+  border-radius: 16px;
+  border: 3px solid #ec407a; /* bright pink border */
+  box-shadow: 0 6px 20px rgba(236, 64, 122, 0.1); /* soft pink shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
   
   .team-card:hover {
     transform: translateY(-5px);
@@ -32,14 +33,14 @@
   }
   
   .team-image {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    border: 3px solid #f8bbd0; /* light pink border */
-  }
-  
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px; /* smaller radius for subtle rounded corners */
+  margin-bottom: 1rem;
+  border: 5px solid #df155b; /* light pink border */
+}
+
   .team-role {
     font-size: 1.2rem;
     font-weight: 600;

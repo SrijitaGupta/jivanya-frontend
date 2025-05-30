@@ -16,7 +16,7 @@ const initialState = {
   fastFood: "No",
   exercise: "No",
   moodSwings: "No",
-  periodRegularity: "Yes",
+  periodRegularity: "Regular",
   periodDuration: "",
 };
 
@@ -52,14 +52,14 @@ export default function PCOSQuestions() {
       fastFood: formData.fastFood === "Yes" ? 1 : 0,
       exercise: formData.exercise === "Yes" ? 1 : 0,
       moodSwings: formData.moodSwings === "Yes" ? 1 : 0,
-      periodRegularity: formData.periodRegularity === "Yes" ? 1 : 0,
+      periodRegularity: formData.periodRegularity === "Regular" ? 1 : 0,
       periodDuration: Number(formData.periodDuration),
     };
 
     const features = Object.values(updatedFormData);
 
     try {
-      const res = await fetch("https://web-production-44b0.up.railway.app/predict", {
+      const res = await fetch("https://withouttestpcos.onrender.com/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ features }),
@@ -81,14 +81,16 @@ export default function PCOSQuestions() {
     }
   };
 
+  const goToAdvancedTest = () => {
+    window.location.href = "/advanced-test";
+  };
+
   return (
     <div className="menses-container">
-      {/* Image Section */}
       <div className="menses-left">
         <img src={pcosImage} alt="PCOS" className="menses-image" />
       </div>
 
-      {/* Form Section */}
       <div className="menses-right">
         <div className="form-container">
           <h1 className="chat-title">PCOS Risk Checker</h1>
@@ -96,11 +98,26 @@ export default function PCOSQuestions() {
           {prediction === null ? (
             <form className="chat-form" onSubmit={handleSubmit}>
               <ul>
-                <li><label>Age:</label><input name="age" value={formData.age} onChange={handleChange} placeholder="e.g., 25" /></li>
-                <li><label>Weight (kg):</label><input name="weight" value={formData.weight} onChange={handleChange} placeholder="e.g., 55" /></li>
-                <li><label>Height (cm):</label><input name="height" value={formData.height} onChange={handleChange} placeholder="e.g., 165" /></li>
-                <li><label>Blood Group:</label><input name="bloodGroup" value={formData.bloodGroup} onChange={handleChange} placeholder="e.g., B+" /></li>
-                <li><label>Months between periods (1 if regular):</label><input name="cycleGap" value={formData.cycleGap} onChange={handleChange} placeholder="e.g., 1" /></li>
+                <li>
+                  <label>Age:</label>
+                  <input name="age" value={formData.age} onChange={handleChange} placeholder="e.g. 25" required />
+                </li>
+                <li>
+                  <label>Weight (kg):</label>
+                  <input name="weight" value={formData.weight} onChange={handleChange} placeholder="e.g. 55" required />
+                </li>
+                <li>
+                  <label>Height (cm):</label>
+                  <input name="height" value={formData.height} onChange={handleChange} placeholder="e.g. 165" required />
+                </li>
+                <li>
+                  <label>Blood Group:</label>
+                  <input name="bloodGroup" value={formData.bloodGroup} onChange={handleChange} placeholder="e.g. B+" required />
+                </li>
+                <li>
+                  <label>Months between periods (1 if regular):</label>
+                  <input name="cycleGap" value={formData.cycleGap} onChange={handleChange} placeholder="e.g. 1" required />
+                </li>
                 <li>
                   <label>Recent Weight Gain:</label>
                   <select name="recentWeightGain" value={formData.recentWeightGain} onChange={handleChange}>
@@ -160,11 +177,14 @@ export default function PCOSQuestions() {
                 <li>
                   <label>Period Regularity:</label>
                   <select name="periodRegularity" value={formData.periodRegularity} onChange={handleChange}>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <option value="Regular">Regular</option>
+                    <option value="Irregular">Irregular</option>
                   </select>
                 </li>
-                <li><label>Period Duration (days):</label><input name="periodDuration" value={formData.periodDuration} onChange={handleChange} placeholder="e.g., 6" /></li>
+                <li>
+                  <label>Period Duration (days):</label>
+                  <input name="periodDuration" value={formData.periodDuration} onChange={handleChange} placeholder="e.g. 6" required />
+                </li>
               </ul>
 
               <button className="chat-submit" type="submit" disabled={loading}>
@@ -177,17 +197,14 @@ export default function PCOSQuestions() {
             <div className="chat-results">
               <div className="chat-bubble result">Prediction: {prediction}</div>
               {feedback && (
-                <div
-                  className="chat-bubble result"
-                  dangerouslySetInnerHTML={{ __html: feedback.replace(/\n/g, "<br/>") }}
-                />
+                <div className="chat-bubble result" dangerouslySetInnerHTML={{ __html: feedback.replace(/\n/g, "<br/>") }} />
               )}
               {warning && (
-                <div
-                  className="chat-bubble result"
-                  dangerouslySetInnerHTML={{ __html: warning.replace(/\n/g, "<br/>") }}
-                />
+                <div className="chat-bubble result" dangerouslySetInnerHTML={{ __html: warning.replace(/\n/g, "<br/>") }} />
               )}
+              <button className="chat-submit" onClick={goToAdvancedTest} style={{ marginTop: "15px" }}>
+                Go to Advanced Test
+              </button>
             </div>
           )}
         </div>

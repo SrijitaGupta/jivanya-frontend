@@ -21,7 +21,7 @@ function Header() {
       {/* Desktop Navigation Links */}
       <div className="nav-links">
         <Link to="/">Home</Link>
-        <Link to="/menu">Menu</Link>
+        
         <Link to="/about">About</Link>
         <Link to="/contact">Contact</Link>
       </div>

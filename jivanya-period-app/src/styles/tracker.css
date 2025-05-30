@@ -1,49 +1,61 @@
 .tracker-container-main {
-    padding: 2rem;
-    background-color: #fff0f6;
-    min-height: 100vh;
-    color: #d63384;
-  }
-  
-  .tracker-title-main {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .tracker-grid {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-  
-  .tracker-card {
-    background-color: #ffc0cb;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 280px;
-    text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-  .tracker-card.clickable {
-    cursor: pointer;
-  }
-  
-  .tracker-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  .tracker-card-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  
-  .tracker-card-sub {
-    margin-top: 0.5rem;
-    font-size: 1rem;
-  }
-  
+  padding: 2rem;
+  background: linear-gradient(135deg, #fff0f6, #ffe4ec);
+  min-height: 100vh;
+  color: #d63384;
+}
+
+.tracker-title-main {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(214, 51, 132, 0.3);
+}
+
+.tracker-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.tracker-card {
+  background: linear-gradient(145deg, #ffd1dc, #ffabc1);
+  padding: 2rem 1.8rem;
+  border-radius: 1.2rem;
+  box-shadow:
+    4px 4px 12px rgba(214, 51, 132, 0.25),
+    inset 0 0 10px rgba(255, 182, 193, 0.4);
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #e75480;
+}
+
+.tracker-card.clickable {
+  cursor: pointer;
+}
+
+.tracker-card:hover {
+  transform: scale(1.08);
+  box-shadow:
+    6px 6px 20px rgba(214, 51, 132, 0.4),
+    inset 0 0 15px rgba(255, 182, 193, 0.5);
+  border-color: #d63384;
+}
+
+.tracker-card-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #9b1451;
+  margin-bottom: 0.6rem;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.tracker-card-sub {
+  margin-top: 0.6rem;
+  font-size: 1.1rem;
+  color: #7a2150;
+  line-height: 1.4;
+}

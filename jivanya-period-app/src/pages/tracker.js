@@ -26,7 +26,7 @@ export default function Tracker() {
   };
 
   const handleChatbotClick = () => {
-    navigate("/chat-bot");
+    navigate("/bloom-bot");
   };
 
   return (

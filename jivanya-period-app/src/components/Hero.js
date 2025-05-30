@@ -28,7 +28,7 @@ function Hero() {
         {/* Add fallback text for accessibility */}
         <h1 id="welcome-text">Welcome to Jivanya</h1> {/* Default text for accessibility */}
         <p>Your personal period and health tracker</p>
-        <a href="login.html" className="cta-button">Get Started</a>
+        <a href="/signup" className="cta-button">Get Started</a>
       </div>
     </section>
   );

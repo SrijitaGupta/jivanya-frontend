@@ -1,0 +1,109 @@
+.about-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffeaf2;
+  padding: 2rem;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header img {
+  height: 60px;
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  color: #c6366c;
+  margin: 0.25rem 0;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0.5rem 0;
+}
+
+header p {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
+
+.who-we-are h3 {
+  color: #c6366c;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.who-we-are .who-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.who-we-are img {
+  height: 80px;
+}
+
+.mission-vision {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.mission-box,
+.vision-box {
+  background-color: #ffffff;
+  border: 1px solid #c6366c;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.mission-box h4,
+.vision-box h4 {
+  color: #c6366c;
+  margin-bottom: 0.5rem;
+}
+
+.values {
+  margin-top: 2rem;
+}
+
+.values h3 {
+  color: #c6366c;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.values ul {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.values li {
+  margin-bottom: 0.5rem;
+}
+
+.values img {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+@media (max-width: 768px) {
+  .values-section {
+    flex-direction: column;
+  }
+
+  .values-section img {
+    height: 300px; /* or any height you prefer */
+    width: 100%;
+  }
+}

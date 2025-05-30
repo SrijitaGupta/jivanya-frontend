@@ -202,7 +202,10 @@ const Dashboard = () => {
           <button className="dashboardmenu-button" onClick={() => navigate('/tracker')}>
             <i className="fas fa-heartbeat"></i> Health Tracker
           </button>
-          <button className="dashboardmenu-button">Community</button>
+          <button className="dashboardmenu-button" onClick={() => navigate('/logout')}>
+           Logout
+          </button>
+
         </nav>
       </aside>
 

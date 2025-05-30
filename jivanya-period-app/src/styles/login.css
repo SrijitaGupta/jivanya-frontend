@@ -28,18 +28,20 @@
   
   /* Login Card */
   .card {
-    width: 50%;
-    height: 400px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
+  width: 50%;
+  max-height: 350px; /* limit max height */
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow-y: auto; /* allow scrolling if content overflows */
+}
+
   
   /* Card Hover Effect */
   .card:hover {
@@ -110,4 +112,48 @@
       font-size: 14px; /* Smaller button font for mobile */
     }
   }
-  
+  .spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.show-password-container {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.show-password-container input[type="checkbox"] {
+  margin-right: 6px;
+}
+
+.forgot-password {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: right;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}

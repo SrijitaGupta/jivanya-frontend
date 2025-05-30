@@ -129,4 +129,44 @@
     width: 20px;
     height: 20px;
   }
-  
+  .error {
+  color: #ff3860;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+.success {
+  color: #ff66cc;
+  margin: 10px 0;
+  font-weight: 600;
+}
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.show-password-container {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.show-password-container input[type="checkbox"] {
+  margin-right: 8px;
+}
