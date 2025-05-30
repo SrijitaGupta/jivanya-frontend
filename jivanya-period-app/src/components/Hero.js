@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Typed } from 'react-typed'; // Correct import
 import '../styles/Hero.css';
+import { Link } from 'react-router-dom';
 
 function Hero() {
     useEffect(() => {
@@ -28,7 +29,7 @@ function Hero() {
         {/* Add fallback text for accessibility */}
         <h1 id="welcome-text">Welcome to Jivanya</h1> {/* Default text for accessibility */}
         <p>Your personal period and health tracker</p>
-        <a href="/signup" className="cta-button">Get Started</a>
+        <Link to="/signup" className="cta-button">Get Started</Link>
       </div>
     </section>
   );

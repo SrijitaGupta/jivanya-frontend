@@ -1,7 +1,9 @@
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../styles/dashboard.css";
 import periodIcon from "../assets/period_tracker.jpg";
+import axios from "axios";
+import jsPDF from "jspdf";
 
 const defaultImages = [
   "https://images.pexels.com/photos/53141/rose-red-blossom-bloom-53141.jpeg",
@@ -47,68 +49,25 @@ const Dashboard = () => {
   const increment = (setter, value) => setter(value + 1);
   const decrement = (setter, value) => value > 1 && setter(value - 1);
 
-  const calculateDays = useCallback(() => {
-    if (!lastPeriod) return { period: [], ovulation: [] };
-
-    const periodHighlights = [];
-    const ovulationHighlights = [];
-    const startDate = new Date(lastPeriod);
-    let nextPeriodDate = new Date(startDate);
-
-    for (let i = 0; i < 12; i++) {
-      for (let j = 0; j < periodLength; j++) {
-        const date = new Date(nextPeriodDate);
-        date.setDate(nextPeriodDate.getDate() + j);
-        if (
-          date.getMonth() === currentMonth &&
-          date.getFullYear() === currentYear
-        ) {
-          periodHighlights.push(date.getDate());
-        }
-      }
-
-      const ovulationDate = new Date(nextPeriodDate);
-      ovulationDate.setDate(nextPeriodDate.getDate() + cycleLength - 14);
-      if (
-        ovulationDate.getMonth() === currentMonth &&
-        ovulationDate.getFullYear() === currentYear
-      ) {
-        ovulationHighlights.push(ovulationDate.getDate());
-      }
-
-      nextPeriodDate.setDate(nextPeriodDate.getDate() + cycleLength);
-    }
-
-    return {
-      period: periodHighlights,
-      ovulation: ovulationHighlights
-    };
-  }, [lastPeriod, periodLength, cycleLength, currentMonth, currentYear]);
-
   useEffect(() => {
     if (lastPeriod) {
-      const { period, ovulation } = calculateDays();
-      setHighlightedDays(period);
-      setOvulationDays(ovulation);
-
-      const lastDate = new Date(lastPeriod);
-      const nextCycle = new Date(lastDate);
-      nextCycle.setDate(lastDate.getDate() + cycleLength);
-
-      const today = new Date();
-      const diffTime = nextCycle - today;
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-      if (diffDays >= 0) {
-        setDaysLeft(diffDays);
-      } else {
-        const cyclesPassed = Math.ceil(Math.abs(diffDays) / cycleLength);
-        nextCycle.setDate(lastDate.getDate() + cycleLength * (cyclesPassed + 1));
-        const newDiff = nextCycle - today;
-        setDaysLeft(Math.ceil(newDiff / (1000 * 60 * 60 * 24)));
-      }
+      axios.post("https://cycle-calc.onrender.com/api/cycle", {
+        lastPeriod,
+        cycleLength,
+        periodLength
+      })
+      .then((response) => {
+        const { highlightedDays, ovulationDays, daysLeft } = response.data;
+        setHighlightedDays(highlightedDays);
+        setOvulationDays(ovulationDays);
+        setDaysLeft(daysLeft);
+      })
+      .catch((error) => {
+        console.error("Error fetching cycle data:", error);
+      });
     }
-  }, [lastPeriod, cycleLength, periodLength, currentMonth, currentYear, calculateDays]);
+  }, [lastPeriod, cycleLength, periodLength, currentMonth, currentYear]);
+
 
   const getMonthDays = (year, month) => {
     const date = new Date(year, month, 1);
@@ -169,6 +128,28 @@ const Dashboard = () => {
 
   const days = getMonthDays(currentYear, currentMonth);
   const monthName = new Date(currentYear, currentMonth).toLocaleString('default', { month: 'long' });
+
+  const exportToPDF = () => {
+    const doc = new jsPDF();
+
+    doc.setFontSize(18);
+    doc.text("Period Tracker Summary", 20, 20);
+
+    doc.setFontSize(12);
+    doc.text(`Last Period: ${lastPeriod}`, 20, 40);
+    doc.text(`Cycle Length: ${cycleLength} days`, 20, 50);
+    doc.text(`Period Length: ${periodLength} days`, 20, 60);
+    doc.text(`Days Left Until Next Period: ${daysLeft !== null ? daysLeft : 'N/A'} day(s)`, 20, 70);
+
+    doc.text("Period Days This Month:", 20, 90);
+    doc.text(highlightedDays.join(", ") || "None", 20, 100);
+
+    doc.text("Ovulation Days This Month:", 20, 120);
+    doc.text(ovulationDays.join(", ") || "None", 20, 130);
+
+    doc.save("period-tracker-summary.pdf");
+  };
+
 
   return (
     <div className="dashboard-container">
@@ -307,6 +288,11 @@ const Dashboard = () => {
                 <p>{daysLeft} {daysLeft === 1 ? "day" : "days"}</p>
               </div>
             )}
+
+            <button className="set-cycle-btn" onClick={exportToPDF}>
+              Download Summary as PDF
+</button>
+
           </div>
         </section>
 
